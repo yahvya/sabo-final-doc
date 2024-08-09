@@ -7,6 +7,8 @@
                  start-page="starter-topic.md">
 
     <toc-element topic="starter-topic.md">
-        <toc-element topic="directories_structure.md"/>
+        <toc-element topic="directories_structure.md">
+        </toc-element>
+        <toc-element topic="configuration_elements.md"/>
     </toc-element>
 </instance-profile>
