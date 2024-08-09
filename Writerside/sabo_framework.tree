@@ -6,5 +6,7 @@
                  name="sabo_framework"
                  start-page="starter-topic.md">
 
-    <toc-element topic="starter-topic.md"/>
+    <toc-element topic="starter-topic.md">
+        <toc-element topic="directories_structure.md"/>
+    </toc-element>
 </instance-profile>
