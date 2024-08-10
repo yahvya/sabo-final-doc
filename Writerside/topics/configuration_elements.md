@@ -29,7 +29,7 @@
 
 ## [framework.php]
 
-<note>Ce fichier contient les configurations modulable du framework (chemins, formats ...). Il permet également d'ajouter des configurations qui seront chargées globalement dans l'application.</note>
+<note>Ce fichier contient les configurations modulables du framework (chemins, formats ...). Il permet également d'ajouter des configurations qui seront chargées globalement dans l'application.</note>
 
 - Définition du timezone par défaut
 - Définition du chemin du dossier des ressources publiques
@@ -38,7 +38,7 @@
 - Définition de la liste des extensions autorisées à l'accès publique
 - Définition de la regex permettant la définition du format d'un paramètre générique. (<code>`{generic_url_param}`</code> ou <code>:generic_url_param</code> ou <code>format_personnalisé</code>)
   
-    > Cette regex doit permettre de capturer le nom du paramètre générique tout en reconnaissant les symboles liées
+    > Cette regex doit permettre de capturer le nom du paramètre générique tout en reconnaissant les symboles liés
 
     ex: <code>`{generic_url_param}`</code> = <code>"\{([a-zA-Z]+)\}"</code> Le nom du paramètre est capturé et les accolades détectées.
 
@@ -48,9 +48,9 @@
 
 ## [blade-config.php]
 
-<note>Ce fichier contient la fonction d'enregistrement des directives blade ainsi que la fonction de récupération de route formatées pour javascript.</note>
+<note>Ce fichier contient la fonction d'enregistrement des directives blade ainsi que la fonction de récupération de route formatée pour javascript.</note>
 
-**Réferrez vous aux commentaires des fonctions**
+**Référez-vous aux commentaires des fonctions**
 
 ## [env.php]
 
