@@ -176,7 +176,7 @@ Ce code donnera les routes, accessible en get :
 
 <code-block lang="php">Route::method(string $link, Closure|array $toExecute, string $routeName, array $genericParamsRegex = [], array $accessVerifiers = [])</code-block>
 
-- <code>$link</code> lien associé. Ce lien peut contenir des paramètres génériques au format défini par framework.php. [Voir la définition de format]()
+- <code>$link</code> lien associé. Ce lien peut contenir des paramètres génériques au format défini par framework.php. [Voir la définition de format](configuration_elements.md#framework-php)
 - <code>$toExecute</code> Callable à appeler pour traiter la requête
   <note>Le callable doit renvoyer une <code>Response</code> et peut se faire injecter un type <code>Request</code> ainsi que les paramètres génériques via leur nom</note>
   
@@ -210,3 +210,22 @@ Ce code donnera les routes, accessible en get :
 
 <note>Les mêmes éléments sont posés sur la création de groupe de route, les conditions sont appliquées à toutes les sous routes.</note>
 <warning>Sur un groupe de routes les règles de paramètres génériques sont encapsulés sur le prefix des liens</warning>
+
+## Sous fichiers de route
+
+> Pour apporter une meilleure organisation, des sous fichiers routes peuvent être créés via l'utilisation de <code>RouteManager::fromFile</code>
+
+Cette fonction prend en paramètre le chemin du fichier sans son extension qui doit être ***.php*** avec comme racine le dossier <code>routes</code>.
+
+- routes
+  - web.php
+  - routes.php
+  - api.php
+  - custom-routes
+    - authentication.php
+
+Pour charger le fichier <code>authentication.php</code>, vous pouvez utiliser la fonction spécifiée ci-dessus dans le fichier <code>web.php</code>.
+
+<code-block>
+RouteManager::fromFile(filename: "custom-routes/authentication");
+</code-block>

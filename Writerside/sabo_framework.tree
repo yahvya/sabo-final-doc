@@ -11,5 +11,6 @@
         </toc-element>
         <toc-element topic="configuration_elements.md"/>
         <toc-element topic="routing.md"/>
+        <toc-element topic="controllers.md"/>
     </toc-element>
 </instance-profile>
