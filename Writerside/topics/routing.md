@@ -229,3 +229,9 @@ Pour charger le fichier <code>authentication.php</code>, vous pouvez utiliser la
 <code-block>
 RouteManager::fromFile(filename: "custom-routes/authentication");
 </code-block>
+
+## Mode de développement
+
+> Lors de la phase de routing le mode de développement défini si oui ou non la récupération d'exception non gérée est capturée ou non. Si dev mode à <code>true</code> alors les erreurs ne sont pas capturées sinon elles le sont et la page d'erreur interne est affichée.
+
+[Mise à jour du mode dans l'environnement](configuration_elements.md#env-php)
