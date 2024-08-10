@@ -12,6 +12,7 @@
         <toc-element topic="configuration_elements.md"/>
         <toc-element topic="routing.md"/>
         <toc-element topic="controllers.md"/>
+        <toc-element topic="treatments_classes.md"/>
         <toc-element topic="database_description.md">
             <toc-element topic="customized_request.md"/>
         </toc-element>
