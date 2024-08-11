@@ -33,6 +33,7 @@
             <toc-element topic="session_storage_util.md"/>
             <toc-element topic="sse_util.md"/>
             <toc-element topic="string_util.md"/>
+            <toc-element topic="verifier_util.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>
