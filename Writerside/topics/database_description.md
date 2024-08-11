@@ -66,6 +66,8 @@ Cette class permet également de définir des méthodes personnalisées pour les
     - Le troisième paramètre <code>loadOnGeneration</code> permet de définir si les models liés doivent être chargés automatiquement à la génération du model. *Celà permet notamment d'éviter le chargement infini entre deux models.*
         <note>Dans le cas où le chargement se veut manuel, la création d'une nouvelle instance <code>new JoinedColumn()->loadContent()</code>.</note>
 
+<note>Pour créer un nouvel attribut il vous faut créer une class qui extends de <code>SaboCore\Database\Default\Attributes\TableColumn</code> dont les méthodes et le constructeur peuvent être redéfinies au besoin. Se baser sur un type existant est recommandé.</note>
+  
 ## Les conditions d'affectation
 
 > Les conditions d'affectation permettent d'ajouter des barrières à passer lors de l'affectation d'une valeur sur un attribut lié à une colonne. Ces conditions peuvent être posées via chaque attribut de description. Elles doivent toutes être validées afin que l'affection opère. À l'échec d'une condition une exception est levée avec le message d'erreur associé.

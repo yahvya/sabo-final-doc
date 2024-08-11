@@ -27,6 +27,7 @@
         <toc-element topic="mailing.md"/>
         <toc-element topic="utilitaries.md">
             <toc-element topic="apis_util.md"/>
+            <toc-element topic="csrf.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>
