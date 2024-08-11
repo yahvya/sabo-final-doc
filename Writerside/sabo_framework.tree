@@ -25,6 +25,7 @@
         <toc-element topic="request_response_classes.md"/>
         <toc-element topic="private_storage.md"/>
         <toc-element topic="mailing.md"/>
+        <toc-element topic="route_access.md"/>
         <toc-element topic="utilitaries.md">
             <toc-element topic="apis_util.md"/>
             <toc-element topic="csrf.md"/>
