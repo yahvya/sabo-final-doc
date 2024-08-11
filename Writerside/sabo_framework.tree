@@ -28,6 +28,7 @@
         <toc-element topic="utilitaries.md">
             <toc-element topic="apis_util.md"/>
             <toc-element topic="csrf.md"/>
+            <toc-element topic="file_manager_utils.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>
