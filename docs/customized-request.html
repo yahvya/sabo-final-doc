@@ -1,0 +1,95 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html lang="en-US" data-preset="contrast" data-primary-color="#307FFF" data-resizable-sidebar="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="robots" content="noindex"><meta name="built-on" content="2024-08-12T00:33:18.1019254"><title>Construction de requ&ecirc;tes customis&eacute;es | Sabo Framework</title><script type="application/json" id="virtual-toc-data">[{"id":"mysqlquerybuilder","level":0,"title":"MysqlQueryBuilder","anchor":"#mysqlquerybuilder"},{"id":"mysqlcomparator","level":0,"title":"MysqlComparator","anchor":"#mysqlcomparator"},{"id":"mysqlcondition","level":0,"title":"MysqlCondition","anchor":"#mysqlcondition"},{"id":"mysqlcondseparator","level":0,"title":"MysqlCondSeparator","anchor":"#mysqlcondseparator"}]</script><script type="application/json" id="topic-shortcuts"></script><link href="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b408/app.css" rel="stylesheet"><link rel="icon" type="image/x-icon" sizes="16x16" href="images/sabo-icon.ico"><meta name="image" content=""><!-- Open Graph --><meta property="og:title" content="Construction de requ&ecirc;tes customis&eacute;es | Sabo Framework"><meta property="og:description" content=""><meta property="og:image" content=""><meta property="og:site_name" content="Sabo Framework Help"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:url" content="writerside-documentation/customized-request.html"><!-- End Open Graph --><!-- Twitter Card --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content=""><meta name="twitter:title" content="Construction de requ&ecirc;tes customis&eacute;es | Sabo Framework"><meta name="twitter:description" content=""><meta name="twitter:creator" content=""><meta name="twitter:image:src" content=""><!-- End Twitter Card --><!-- Schema.org WebPage --><script type="application/ld+json">{
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "@id": "writerside-documentation/customized-request.html#webpage",
+    "url": "writerside-documentation/customized-request.html",
+    "name": "Construction de requ&ecirc;tes customis&eacute;es | Sabo Framework",
+    "description": "",
+    "image": "",
+    "inLanguage":"en-US"
+}</script><!-- End Schema.org --><!-- Schema.org WebSite --><script type="application/ld+json">{
+    "@type": "WebSite",
+    "@id": "writerside-documentation/#website",
+    "url": "writerside-documentation/",
+    "name": "Sabo Framework Help"
+}</script><!-- End Schema.org --></head><body data-id="customized_request" data-main-title="Construction de requêtes customisées" data-article-props="{&quot;seeAlsoStyle&quot;:&quot;links&quot;}" data-template="article" data-breadcrumbs="starter-topic.md|Framework Sabo///database_description.md|Base de données"><div class="wrapper"><main class="panel _main"><header class="panel__header"><div class="container"><h3>Sabo Framework  Help</h3><div class="panel-trigger"></div></div></header><section class="panel__content"><div class="container"><article class="article" data-shortcut-switcher="inactive"><h1 data-toc="customized_request" id="customized_request.md">Construction de requêtes customisées</h1><aside class="prompt" data-type="tip" data-title="" id="-eaoadd_3"><p id="-eaoadd_8">Les requ&ecirc;tes customis&eacute;es passent par l'utilisation de plusieurs utilitaires diff&eacute;rents permettant de construire via des m&eacute;thodes PHP une requ&ecirc;te SQL diff&eacute;rente des m&eacute;thodes classiques CRUD.</p></aside><section class="chapter"><h2 id="mysqlquerybuilder" data-toc="mysqlquerybuilder">MysqlQueryBuilder</h2><p id="-eaoadd_9">L'utilitaire principale, le constructeur de requ&ecirc;te <code class="code" id="-eaoadd_23">SaboCore\Database\Default\QueryBuilder\MysqlQueryBuilder</code></p><div class="code-block" data-lang="php">
+&lt;?php
+use SaboCore\Database\Default\QueryBuilder\MysqlQueryBuilder;
+MysqlQueryBuilder::createFrom(modelClass: YourModel::class);
+</div><ul class="list _bullet" id="-eaoadd_11"><li class="list__item" id="-eaoadd_24"><p id="-eaoadd_33"><code class="code" id="-eaoadd_34">reset</code> remet &agrave; 0 les &eacute;l&eacute;ments internes du constructeur</p></li><li class="list__item" id="-eaoadd_25"><p id="-eaoadd_35"><code class="code" id="-eaoadd_36">prepareRequest</code> pr&eacute;pare la requ&ecirc;te dans l'instance de PDO fournie</p></li><li class="list__item" id="-eaoadd_26"><p id="-eaoadd_37"><code class="code" id="-eaoadd_39">as</code> d&eacute;fini l'alias dans la requ&ecirc;te</p><aside class="prompt" data-type="warning" data-title="" id="-eaoadd_38"><p>Un alias par d&eacute;faut est associ&eacute; par d&eacute;faut &agrave; chaque constructeur</p></aside></li><li class="list__item" id="-eaoadd_27"><p id="-eaoadd_40"><code class="code" id="-eaoadd_41">getRealSql</code> fourni le SQL interne sans modification</p></li><li class="list__item" id="-eaoadd_28"><p id="-eaoadd_42"><code class="code" id="-eaoadd_43">getSql</code> fourni le SQL g&eacute;n&eacute;r&eacute;</p></li><li class="list__item" id="-eaoadd_29"><p id="-eaoadd_44"><code class="code" id="-eaoadd_45">getBaseModel</code> fourni le model li&eacute; au constructeur</p></li><li class="list__item" id="-eaoadd_30"><p id="-eaoadd_46"><code class="code" id="-eaoadd_47">getBindValues</code> fourni une liste de class gestionnaires de <span class="emphasis" id="-eaoadd_48">bind</span></p></li><li class="list__item" id="-eaoadd_31"><p id="-eaoadd_49"><code class="code" id="-eaoadd_50">joinBuilder</code> permet de joindre le constructeur fourni au constructeur actuel (utilis&eacute; pour l'imbrication de requ&ecirc;te)</p></li><li class="list__item" id="-eaoadd_32"><p id="-eaoadd_51"><code class="code" id="-eaoadd_53">staticRequest</code> permet d'&eacute;crire manuellement une requ&ecirc;te SQL</p><aside class="prompt" data-type="warning" data-title="" id="-eaoadd_52"><p>Si possible mieux vaux utiliser les fonctions de constructions</p></aside></li></ul><aside class="prompt" data-type="note" data-title="" id="-eaoadd_12"><p>Les fonctions suivantes permettent de construire la requ&ecirc;te SQL partie par partie. Les commentaires associ&eacute;s d&eacute;crivent plus en d&eacute;tails chacun des param&egrave;tres.</p></aside><section class="chapter"><h3 id="select" data-toc="select">Select</h3><aside class="prompt" data-type="tip" data-title="" id="-eaoadd_54"><p id="-eaoadd_57">La m&eacute;thode <code class="code" id="-eaoadd_58">select</code> permet de d&eacute;finir les &eacute;l&eacute;ments &agrave; s&eacute;lectionner dans la requ&ecirc;te. Elle attend des noms d'attribut ou des fonctions SQL encapsul&eacute;es dans <code class="code" id="-eaoadd_59">MysqlFunction</code>. Si aucun param&egrave;tre n'est fourni alors <code class="code" id="-eaoadd_60">SELECT *</code></p></aside><p id="-eaoadd_55"><span class="emphasis" id="-eaoadd_61">Cet exemple montre uniquement les possibilit&eacute;s</span></p><div class="code-block" data-lang="php">
+$builder-&gt;select(&quot;username&quot;,MysqlFunction::COUNT(numberGetter: &quot;`{price}`&quot;));
+</div></section><section class="chapter"><h3 id="insert" data-toc="insert">Insert</h3><aside class="prompt" data-type="tip" data-title="" id="-eaoadd_62"><p id="-eaoadd_66">La m&eacute;thode <code class="code" id="-eaoadd_67">insert</code> permet de d&eacute;finir une requ&ecirc;te d'insertion. Elle attend un tableau indic&eacute; par les noms d'attributs de class associ&eacute; aux colonnes avec comme valeur, les donn&eacute;es &agrave; ins&eacute;rer.</p></aside><p id="-eaoadd_63">Les donn&eacute;es &agrave; ins&eacute;rer peuvent &ecirc;tre sous la forme : <code class="code" id="-eaoadd_68">brute</code>, <code class="code" id="-eaoadd_69">MysqlFunction</code> ou <code class="code" id="-eaoadd_70">MysqlQueryBuilder</code></p><p id="-eaoadd_64"><span class="emphasis" id="-eaoadd_71">Cet exemple montre uniquement les possibilit&eacute;s</span></p><div class="code-block" data-lang="php">
+$builder-&gt;insert(insertConfig: [
+    &quot;username&quot; =&gt; &quot;yahvya&quot;,
+    &quot;github&quot; =&gt; &quot;https://github.com/yahvya&quot;,
+    &quot;fullname&quot; =&gt; MysqlFunction::UPPER(&quot;{username}&quot;),
+    &quot;queryResult&quot; =&gt; MysqlQueryBuilder::createFrom(modelClass: YourModel::class)
+        -&gt;select()
+        -&gt;limit(count: 1)
+]);
+</div></section><section class="chapter"><h3 id="update" data-toc="update">Update</h3><aside class="prompt" data-type="tip" data-title="" id="-eaoadd_72"><p id="-eaoadd_76">La m&eacute;thode <code class="code" id="-eaoadd_77">update</code> permet de d&eacute;finir une requ&ecirc;te de mise &agrave; jour. Elle attend un tableau indic&eacute; par les noms d'attributs de class associ&eacute; aux colonnes avec comme valeur, les donn&eacute;es &agrave; mettre &agrave; jour.</p></aside><p id="-eaoadd_73">Les donn&eacute;es &agrave; mettre &agrave; jour peuvent &ecirc;tre sous la forme : <code class="code" id="-eaoadd_78">brute</code>, <code class="code" id="-eaoadd_79">MysqlFunction</code> ou <code class="code" id="-eaoadd_80">MysqlQueryBuilder</code></p><p id="-eaoadd_74"><span class="emphasis" id="-eaoadd_81">Cet exemple montre uniquement les possibilit&eacute;s</span></p><div class="code-block" data-lang="php">
+$builder-&gt;update(insertConfig: [
+    &quot;username&quot; =&gt; &quot;yahvya&quot;,
+    &quot;github&quot; =&gt; &quot;https://github.com/yahvya&quot;,
+    &quot;fullname&quot; =&gt; MysqlFunction::UPPER(&quot;{username}&quot;),
+    &quot;queryResult&quot; =&gt; MysqlQueryBuilder::createFrom(modelClass: YourModel::class)
+        -&gt;select()
+        -&gt;limit(count: 1)
+]);
+</div></section><section class="chapter"><h3 id="delete" data-toc="delete">Delete</h3><aside class="prompt" data-type="tip" data-title="" id="-eaoadd_82"><p id="-eaoadd_84">La m&eacute;thode <code class="code" id="-eaoadd_85">delete</code> permet de d&eacute;finir une requ&ecirc;te de suppression.</p></aside><div class="code-block" data-lang="php">
+$builder-&gt;delete();
+</div></section><section class="chapter"><h3 id="where" data-toc="where">Where</h3><aside class="prompt" data-type="tip" data-title="" id="-eaoadd_86"><p id="-eaoadd_88">La fonction <code class="code" id="-eaoadd_89">where</code> permet d'ajouter le mot cl&eacute; <code class="code" id="-eaoadd_90">WHERE</code> sur la requ&ecirc;te</p></aside><div class="code-block" data-lang="php">
+$builder-&gt;select()-&gt;where(); # équivaux à SELECT * from ... WHERE
+</div></section><section class="chapter"><h3 id="cond" data-toc="cond">Cond</h3><aside class="prompt" data-type="tip" data-title="" id="-eaoadd_91"><p id="-eaoadd_94">La fonction <code class="code" id="-eaoadd_95">cond</code> permet de paire avec <code class="code" id="-eaoadd_96">where</code>, de d&eacute;finir les conditions where via un ensemble de m&eacute;thodes. Elle attend <code class="code" id="-eaoadd_97">MysqlCondition</code> la classe de gestion des conditions ou <code class="code" id="-eaoadd_98">MysqlCondSeparator</code> permettant de s&eacute;parer les conditions, cr&eacute;er des groupes ...</p></aside><p id="-eaoadd_92"><span class="emphasis" id="-eaoadd_99">Cet exemple montre uniquement les possibilit&eacute;s</span></p><div class="code-block" data-lang="php">
+$builder
+    -&gt;select()
+    -&gt;where()
+    -&gt;cond(
+        new MysqlCondition(condGetter: &quot;username&quot;,comparator: MysqlComparator::EQUAL(),conditionValue: &quot;yahvya&quot;),
+        MysqlCondSeparator::AND(),
+        new MysqlCondition(condGetter: &quot;email&quot;,comparator: MysqlComparator::EQUAL(),conditionValue: &quot;sabo.framework@github.com&quot;),
+    );
+</div></section><section class="chapter"><h3 id="having" data-toc="having">Having</h3><aside class="prompt" data-type="tip" data-title="" id="-eaoadd_100"><p id="-eaoadd_101">La fonction <code class="code" id="-eaoadd_102">having</code> permet d'ajouter la clause <code class="code" id="-eaoadd_103">HAVING</code> &agrave; la requ&ecirc;te, sa construction se base sur la <a href="#cond" id="-eaoadd_104" data-tooltip="La fonction cond permet de paire avec where, de définir les conditions where via un ensemble de méthodes. Elle attend MysqlCondition la classe de gestion des conditions ou MysqlCondSeparator permettant de séparer les conditions, créer des groupes ...">m&ecirc;me logique de construction que la fonction <code class="code" id="-eaoadd_105">cond</code></a></p></aside></section><section class="chapter"><h3 id="order-by" data-toc="order-by">Order By</h3><aside class="prompt" data-type="tip" data-title="" id="-eaoadd_106"><p id="-eaoadd_108">La fonction <code class="code" id="-eaoadd_109">orderBy</code> permet d'ajouter la clause <code class="code" id="-eaoadd_110">orderBy</code> &agrave; la requ&ecirc;te. Elle prend en param&egrave;tre un tableau contenant une liste au format [nom d'attribut, &quot;ASC|DESC]</p></aside><div class="code-block" data-lang="php">
+$builder
+    -&gt;select()
+    -&gt;orderBy([&quot;price&quot;,&quot;ASC&quot;],[&quot;id&quot;,&quot;DESC&quot;]);
+</div></section><section class="chapter"><h3 id="group-by" data-toc="group-by">Group By</h3><aside class="prompt" data-type="tip" data-title="" id="-eaoadd_111"><p id="-eaoadd_114">La fonction <code class="code" id="-eaoadd_115">groupBy</code> permet d'ajouter la clause <code class="code" id="-eaoadd_116">GROUP BY</code> &agrave; la requ&ecirc;te. Elle prend en param&egrave;tre la liste des noms d'attributs de classe.</p></aside><p id="-eaoadd_112"><span class="emphasis" id="-eaoadd_117">Cet exemple montre uniquement les possibilit&eacute;s</span></p><div class="code-block" data-lang="php">
+$builder
+    -&gt;select(MysqlFunction::COUNT(numberGetter: &quot;{price}&quot;))
+    -&gt;groupBy(&quot;price&quot;,&quot;id&quot;);
+</div></section><section class="chapter"><h3 id="limit" data-toc="limit">Limit</h3><aside class="prompt" data-type="tip" data-title="" id="-eaoadd_118"><p id="-eaoadd_120">La fonction <code class="code" id="-eaoadd_121">limit</code> permet d'ajouter la clause <code class="code" id="-eaoadd_122">LIMIT</code> &agrave; la requ&ecirc;te. Elle prend en param&egrave;tre le nombre d'&eacute;l&eacute;ments et optionnellement l'offset.</p></aside><div class="code-block" data-lang="php">
+$builder
+    -&gt;select()
+    -&gt;limit(count: 1);
+$builder
+    -&gt;select()
+    -&gt;limit(count: 15,offset: 30);
+</div></section></section><section class="chapter"><h2 id="mysqlcomparator" data-toc="mysqlcomparator">MysqlComparator</h2><aside class="prompt" data-type="tip" data-title="" id="-eaoadd_123"><p id="-eaoadd_131">Cette class sert &agrave; ajouter un symbole de comparaison. Elle contient par d&eacute;faut un panel de fonctions repr&eacute;sentant diff&eacute;rents modes de comparaison. Fiez-vous aux commentaires de ces fonctions pour l'utilisation.</p></aside><aside class="prompt" data-type="note" data-title="" id="-eaoadd_124"><p>Certains comparateurs attendent un type de donn&eacute;es implicites, <code class="code" id="-eaoadd_132">ex: IN()</code> attend que la donn&eacute;e fournie derri&egrave;re soit un tableau contenant les valeurs &agrave; v&eacute;rifier. Les commentaires d&eacute;finissent les requis</p></aside><aside class="prompt" data-type="warning" data-title="" id="-eaoadd_125"><p>Veuillez utiliser le plus possible les fonctions d&eacute;j&agrave; d&eacute;finies et &eacute;viter d'utiliser le constructeur.</p></aside><p id="-eaoadd_126"><span class="control" id="-eaoadd_133">Focus sur la m&eacute;thode sp&eacute;ciale REQUEST_COMPARATOR</span></p><aside class="prompt" data-type="tip" data-title="" id="-eaoadd_127"><p id="-eaoadd_134">Cette m&eacute;thode permet de comparer une valeur avec le r&eacute;sultat d'une requ&ecirc;te <code class="code" id="-eaoadd_135">ex: WHERE ID = (SELECT id from table)</code>.</p></aside><p id="-eaoadd_128">Elle prend en param&egrave;tre une chaine comparator sp&eacute;ciale, car permettant de choisir l'emplacement de la requ&ecirc;te.</p><p id="-eaoadd_129">Pour une requ&ecirc;te du style <code class="code" id="-eaoadd_136">SELECT * FROM table_1 where id = IN(SELECT id from table_2 LIMIT 4)</code></p><div class="code-block" data-lang="php">
+$tableOneBuilder = MysqlQueryBuilder::createFrom(modelClass: TableOneModel::class);
+$tableTwoBuilder = MysqlQueryBuilder::createFrom(modelClass: TableTwoModel::class);
+$tableTwoBuilder
+    -&gt;select(&quot;id&quot;)
+    -&gt;limit(count: 4);
+$tableOneBuilder
+    -&gt;select();
+    -&gt;where()
+    -&gt;cond(new MysqlCondition(
+        condGetter: &quot;id&quot;,
+        comparator: MysqlComparator::REQUEST_COMPARATOR(comparator: &quot;IN({request})&quot;,queryBuilder: $tableTwoBuilder),
+        conditionValue: $tableTwoBuilder
+    ));
+</div></section><section class="chapter"><h2 id="mysqlcondition" data-toc="mysqlcondition">MysqlCondition</h2><aside class="prompt" data-type="tip" data-title="" id="-eaoadd_137"><p id="-eaoadd_138">Cette class permet de d&eacute;finir une condition sql bas&eacute; sur trois param&egrave;tres, <code class="code" id="-eaoadd_139">condGetter</code> le nom d'un attribut ou <code class="code" id="-eaoadd_140">MysqlFunction</code>, <code class="code" id="-eaoadd_141">comparator</code> le comparateur, <code class="code" id="-eaoadd_142">conditionValue</code> la valeur requise par le comparateur utilis&eacute;</p></aside></section><section class="chapter"><h2 id="mysqlcondseparator" data-toc="mysqlcondseparator">MysqlCondSeparator</h2><aside class="prompt" data-type="tip" data-title="" id="-eaoadd_143"><p id="-eaoadd_145">Cette class permet d'ajouter des bouts de chaine SQL, notamment des mots cl&eacute;s de s&eacute;paration. Elle peut &ecirc;tre donc &ecirc;tre utilis&eacute; pour cr&eacute;er des groupes de condition en ajoutant ( et ) via GROUP_START et GROUP_END ou des mots cl&eacute;s customis&eacute;s</p></aside><div class="code-block" data-lang="php">
+$builder
+    -&gt;select()
+    -&gt;where()
+    -&gt;cond(
+        MysqlCondSeparator::GROUP_START(),
+            new MysqlCondition(...),
+            new MysqlCondSeparator::AND(),
+            new MysqlCondition(...),
+        MysqlCondSeparator::GROUP_END()
+        new MysqlCondSeparator::OR(),
+        new MysqlCondition(...)
+    );
+</div></section><div class="last-modified">Last modified: 11 août 2024</div><div data-feedback-placeholder="true"></div><div class="navigation-links _bottom"><a href="database-description.html" class="navigation-links__prev">Base de donn&eacute;es</a><a href="create-new-system.html" class="navigation-links__next">Cr&eacute;er un nouveau syst&egrave;me</a></div></article><div id="disqus_thread"></div></div></section></main></div><script src="https://resources.jetbrains.com/writerside/apidoc/6.10.0-b408/app.js"></script></body></html>
