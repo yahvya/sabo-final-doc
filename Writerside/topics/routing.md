@@ -33,6 +33,7 @@
     <procedure title="Rendu du site">
         <step>Récupération de la route à afficher</step>
         <step>Vérification des conditions d'accès</step>
+        <step>Gestion des données flash</step>
         <step>Appel du controller et de la méthode de gestion</step>
     </procedure>
 </procedure>
@@ -82,7 +83,7 @@ step_two: Routing{
     check_maintenance -> render_resource: Vérification de ressource accessible
     check_maintenance -> routing_next: Non
     routing_next: Rendu du site {
-        Récupération de la route à afficher -> Vérification des conditions d'accès -> Appel du controller et de la méthode de gestion
+        Récupération de la route à afficher -> Vérification des conditions d'accès -> Gestion des données flash -> Appel du controller et de la méthode de gestion
     }
 }
 
