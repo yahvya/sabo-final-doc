@@ -31,6 +31,8 @@
             <toc-element topic="file_manager_utils.md"/>
             <toc-element topic="list_util.md"/>
             <toc-element topic="session_storage_util.md"/>
+            <toc-element topic="sse_util.md"/>
+            <toc-element topic="string_util.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>
